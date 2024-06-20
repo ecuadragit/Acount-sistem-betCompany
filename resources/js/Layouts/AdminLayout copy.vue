@@ -38,12 +38,9 @@ import SidebarLink from "@/Components/SidebarLink.vue";
       :class="{ 'hidden lg:block': !asideOpen, 'lg:block': asideOpen }"       
       class="aside fixed z-10 top-0 pb-3 px-6 flex flex-col justify-between border bg-white transition-transform duration-300"
     >
-            <div class="text-center lg:[w-100]">
-                <div class="-mx-6 px-6 py-4 text-center relative">
-                    <img src="ruta/al/logo.png" class="absolute top-0 left-1/2 transform -translate-x-1/2 -mt-12 w-24 h-24" alt="Logo">
-                    <span class="block">
-                        {{ $page.props.auth.user ? $page.props.auth.user.name : 'Guest' }}
-                    </span>
+            <div class="">
+                <div class="-mx-6 px-6 py-4 border ">
+                    {{ $page.props.auth.user ? $page.props.auth.user.name : 'Guest' }}
                 </div>
 
                 <ul class="space-y-2 tracking-wide mt-8">
@@ -67,7 +64,7 @@ import SidebarLink from "@/Components/SidebarLink.vue";
                                     class="fill-current rounded-md text-gray-600 group"
                                 ></path>
                             </svg>
-                            <span class="-mr-1 font-medium px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">Dashboard</span>
+                            <span class=" font-medium px-4  flex items-center space-x-4 rounded-md text-gray-600 group">Dashboard</span>
                         </SidebarLink>
                     </li>
                     <li>

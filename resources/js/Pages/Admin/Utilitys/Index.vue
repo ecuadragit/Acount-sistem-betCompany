@@ -374,39 +374,10 @@ filaSeleccionada.value = selectedRows > 0;
                                 
                             </tr>
                         </thead>
-                    </DataTable>
-                    
-                    <!-- <DataTable 
-                    :data="clientes" 
-                    :columns="columns" 
-                    ref="table"
-                  class="display"
-                    :options="{ 
-                        select:true,
-                        responsive: true, 
-                        autoWidth: false, 
-                        dom: 'Bfrtip',
-                        buttons: buttons,
-                        pageLength: 10
-                    }"
-                        @select="handleRowSelection"
-                    /> -->
-                   
-                    
+                    </DataTable>                                      
                 </div>
             </div>
 
-            <!-- <button @click="add">Add new row</button><br />
-<button @click="update">Update selected rows</button><br />
-<button @click="remove">Delete selected rows</button>
- 
-            <DataTable
-                class="display"
-                :columns="columns"
-                :data="dataDisplay"
-                :options="{ select: true }"
-                ref="table"
-            /> -->
         </div>
         <!-- ************************************************************************************************************************************** -->
         <!-- MODAL EDIT  -->
@@ -432,119 +403,114 @@ filaSeleccionada.value = selectedRows > 0;
                             <h2 className="text-xl font-thin mb-4">Título fino</h2>
                         </div>
                         <div className="mb-4">
-                            <label for="fecha" className="block mb-1">FECHA</label>
+                            <label for="fecha" className="block mb-1">CODIGO</label>
                             <input type="text" id="fecha" className="form-input w-full" v-model="formEdit.cod">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese codigo.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="dni" className="block mb-1">DNI</label>
+                            <label for="dni" className="block mb-1">SISTEMA</label>
                             <input type="text" id="dni" className="form-input w-full" v-model="formEdit.sistema">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese sistema.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="medio_de_contacto" className="block mb-1">MEDIO DE CONTACTO</label>
+                            <label for="medio_de_contacto" className="block mb-1">JUEGO</label>
                             <input type="text" id="medio_de_contacto" className="form-input w-full" v-model="formEdit.juego">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese juego.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="medio_de_respuesta" className="block mb-1">MEDIO DE RESPUESTA</label>
+                            <label for="medio_de_respuesta" className="block mb-1">PERIODO</label>
                             <input type="text" id="medio_de_respuesta" className="form-input w-full" v-model="formEdit.periodo">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese periodo.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="como_llego_a_la_marca" className="block mb-1">RESPUESTA ASESOR</label>
+                            <label for="como_llego_a_la_marca" className="block mb-1">ADMINISTRADOR</label>
                             <input type="text" id="como_llego_a_la_marca" className="form-input w-full" v-model="formEdit.administrador">
                             <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
-                        </div>
+                        </div>                       
                         <div className="mb-4">
-                            <label for="primer_contacto" className="block mb-1">PRIMER CONTACTO</label>
-                            <input type="text" id="primer_contacto" className="form-input w-full" v-model="formEdit.shop">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
-                        </div>
-                        <div className="mb-4">
-                            <label for="fecha" className="block mb-1">FECHA</label>
+                            <label for="fecha" className="block mb-1">SEDE</label>
                             <input type="text" id="fecha" className="form-input w-full" v-model="formEdit.sede">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese sede.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="tipo_negocio" className="block mb-1">TIPO DE NEGOCIO</label>
+                            <label for="tipo_negocio" className="block mb-1">INGRESE RAZON SOCIAL</label>
                             <input type="text" id="tipo_negocio" className="form-input w-full" v-model="formEdit.razon_social">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese razon social.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="estado" className="block mb-1">ESTADO</label>
+                            <label for="estado" className="block mb-1">INGRESE RUC</label>
                             <input type="text" id="estado" className="form-input w-full" v-model="formEdit.ruc">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese RUC.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="respuesta_asesor" className="block mb-1">RESPUESTA ASESOR</label>
+                            <label for="respuesta_asesor" className="block mb-1">INGRESE UTILIDAD BRUTA</label>
                             <input type="text" id="respuesta_asesor" className="form-input w-full" v-model="formEdit.utilidad_bruta_100">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese utilidad bruta.</p>
                         </div>
                         <div className="mb-4">
                             <label for="primer_contacto" className="block mb-1">PRIMER CONTACTO</label>
                             <input type="text" id="primer_contacto" className="form-input w-full" v-model="formEdit.impuesto_12">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese primer contacto.</p>
                         </div>
                         <div className="mb-4">
                             <label for="segundo_contacto" className="block mb-1">SEGUNDO CONTACTO</label>
                             <input type="text" id="segundo_contacto" className="form-input w-full" v-model="formEdit.utilidad_impuesto">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese segundo contacto.</p>
                         </div>
                         <div className="mb-4">
                             <label for="tercer_contacto" className="block mb-1">TERCER CONTACTO</label>
                             <input type="text" id="tercer_contacto" className="form-input w-full" v-model="formEdit.porcentaje_base">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese tercer contacto.</p>
                         </div>                                   
                         <div className="mb-4">
                             <label for="realizo_la_venta" className="block mb-1">¿REALIZO LA VENTA?</label>
                             <input type="text" id="realizo_la_venta" className="form-input w-full" v-model="formEdit.utilidad_neta">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese conclusión de venta.</p>
                         </div>
                         <div className="mb-4">
                             <label for="futuro_socio" className="block mb-1">¿FUTURO SOCIO?</label>
                             <input type="text" id="futuro_socio" className="form-input w-full" v-model="formEdit.futuro_socio">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">¿es futuro socio?.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="estado" className="block mb-1">ESTADO</label>
+                            <label for="estado" className="block mb-1">TOTAL A DEPOSITAR</label>
                             <input type="text" id="estado" className="form-input w-full" v-model="formEdit.total_a_depositar">
                             <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="respuesta_asesor" className="block mb-1">RESPUESTA ASESOR</label>
+                            <label for="respuesta_asesor" className="block mb-1">PAGO</label>
                             <input type="text" id="respuesta_asesor" className="form-input w-full" v-model="formEdit.pago">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el pago.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="primer_contacto" className="block mb-1">PRIMER CONTACTO</label>
+                            <label for="primer_contacto" className="block mb-1">% COMISION ADMIN</label>
                             <input type="text" id="primer_contacto" className="form-input w-full" v-model="formEdit.porcentaje_com_adm">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese % comisión admin.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="segundo_contacto" className="block mb-1">SEGUNDO CONTACTO</label>
+                            <label for="segundo_contacto" className="block mb-1">% COMISION S</label>
                             <input type="text" id="segundo_contacto" className="form-input w-full" v-model="formEdit.com_adm_s">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese % comisión s.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="tercer_contacto" className="block mb-1">TERCER CONTACTO</label>
+                            <label for="tercer_contacto" className="block mb-1">% PARTICIPACIÓN </label>
                             <input type="text" id="tercer_contacto" className="form-input w-full" v-model="formEdit.porcentaje_participacion">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese % participación.</p>
                         </div>                                   
                         <div className="mb-4">
-                            <label for="documento_atribucion" className="block mb-1">¿REALIZO LA VENTA?</label>
+                            <label for="documento_atribucion" className="block mb-1">DOCUMENTO ATRIBUCION</label>
                             <input type="text" id="documento_atribucion" className="form-input w-full" v-model="formEdit.documento_atribucion">
                             <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="plataforma_id" className="block mb-1">¿FUTURO SOCIO?</label>
+                            <label for="plataforma_id" className="block mb-1">PLATAFORMA ID</label>
                             <input type="text" id="plataforma_id" className="form-input w-full" v-model="formEdit.plataforma_id">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese plataforma.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="transaccion_id" className="block mb-1">¿FUTURO SOCIO?</label>
+                            <label for="transaccion_id" className="block mb-1">ID TRANSACCIÓN</label>
                             <input type="text" id="transaccion_id" className="form-input w-full" v-model="formEdit.transaccion_id">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese transacción id.</p>
                         </div>
 
                         <!-- Agrega los demás campos del formulario con la misma estructura -->
@@ -577,124 +543,118 @@ filaSeleccionada.value = selectedRows > 0;
                 <!-- Modal body -->
                 <div class="p-4 space-y-4 overflow-y-auto">
                     <form @submit.prevent="update" classNaem="max-w-lg mx-auto border border-gray-300 p-6 my-5 rounded-lg overflow-y-auto">
-                        
                         <div className="my-2">
                             <h2 className="text-xl font-thin mb-4">Título fino</h2>
                         </div>
                         <div className="mb-4">
-                            <label for="fecha" className="block mb-1">FECHA</label>
+                            <label for="fecha" className="block mb-1">CODIGO</label>
                             <input type="text" id="fecha" className="form-input w-full" v-model="form.cod">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese codigo.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="dni" className="block mb-1">DNI</label>
+                            <label for="dni" className="block mb-1">SISTEMA</label>
                             <input type="text" id="dni" className="form-input w-full" v-model="form.sistema">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese sistema.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="medio_de_contacto" className="block mb-1">MEDIO DE CONTACTO</label>
+                            <label for="medio_de_contacto" className="block mb-1">JUEGO</label>
                             <input type="text" id="medio_de_contacto" className="form-input w-full" v-model="form.juego">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese juego.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="medio_de_respuesta" className="block mb-1">MEDIO DE RESPUESTA</label>
+                            <label for="medio_de_respuesta" className="block mb-1">PERIODO</label>
                             <input type="text" id="medio_de_respuesta" className="form-input w-full" v-model="form.periodo">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese periodo.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="como_llego_a_la_marca" className="block mb-1">RESPUESTA ASESOR</label>
+                            <label for="como_llego_a_la_marca" className="block mb-1">ADMINISTRADOR</label>
                             <input type="text" id="como_llego_a_la_marca" className="form-input w-full" v-model="form.administrador">
                             <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
-                        </div>
+                        </div>                       
                         <div className="mb-4">
-                            <label for="primer_contacto" className="block mb-1">PRIMER CONTACTO</label>
-                            <input type="text" id="primer_contacto" className="form-input w-full" v-model="form.shop">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
-                        </div>
-                        <div className="mb-4">
-                            <label for="fecha" className="block mb-1">FECHA</label>
+                            <label for="fecha" className="block mb-1">SEDE</label>
                             <input type="text" id="fecha" className="form-input w-full" v-model="form.sede">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese sede.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="tipo_negocio" className="block mb-1">TIPO DE NEGOCIO</label>
+                            <label for="tipo_negocio" className="block mb-1">INGRESE RAZON SOCIAL</label>
                             <input type="text" id="tipo_negocio" className="form-input w-full" v-model="form.razon_social">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese razon social.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="estado" className="block mb-1">ESTADO</label>
+                            <label for="estado" className="block mb-1">INGRESE RUC</label>
                             <input type="text" id="estado" className="form-input w-full" v-model="form.ruc">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese RUC.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="respuesta_asesor" className="block mb-1">RESPUESTA ASESOR</label>
+                            <label for="respuesta_asesor" className="block mb-1">INGRESE UTILIDAD BRUTA</label>
                             <input type="text" id="respuesta_asesor" className="form-input w-full" v-model="form.utilidad_bruta_100">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese utilidad bruta.</p>
                         </div>
                         <div className="mb-4">
                             <label for="primer_contacto" className="block mb-1">PRIMER CONTACTO</label>
                             <input type="text" id="primer_contacto" className="form-input w-full" v-model="form.impuesto_12">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese primer contacto.</p>
                         </div>
                         <div className="mb-4">
                             <label for="segundo_contacto" className="block mb-1">SEGUNDO CONTACTO</label>
                             <input type="text" id="segundo_contacto" className="form-input w-full" v-model="form.utilidad_impuesto">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese segundo contacto.</p>
                         </div>
                         <div className="mb-4">
                             <label for="tercer_contacto" className="block mb-1">TERCER CONTACTO</label>
                             <input type="text" id="tercer_contacto" className="form-input w-full" v-model="form.porcentaje_base">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese tercer contacto.</p>
                         </div>                                   
                         <div className="mb-4">
                             <label for="realizo_la_venta" className="block mb-1">¿REALIZO LA VENTA?</label>
                             <input type="text" id="realizo_la_venta" className="form-input w-full" v-model="form.utilidad_neta">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese conclusión de venta.</p>
                         </div>
                         <div className="mb-4">
                             <label for="futuro_socio" className="block mb-1">¿FUTURO SOCIO?</label>
                             <input type="text" id="futuro_socio" className="form-input w-full" v-model="form.futuro_socio">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">¿es futuro socio?.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="estado" className="block mb-1">ESTADO</label>
+                            <label for="estado" className="block mb-1">TOTAL A DEPOSITAR</label>
                             <input type="text" id="estado" className="form-input w-full" v-model="form.total_a_depositar">
                             <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="respuesta_asesor" className="block mb-1">RESPUESTA ASESOR</label>
+                            <label for="respuesta_asesor" className="block mb-1">PAGO</label>
                             <input type="text" id="respuesta_asesor" className="form-input w-full" v-model="form.pago">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el pago.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="primer_contacto" className="block mb-1">PRIMER CONTACTO</label>
+                            <label for="primer_contacto" className="block mb-1">% COMISION ADMIN</label>
                             <input type="text" id="primer_contacto" className="form-input w-full" v-model="form.porcentaje_com_adm">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese % comisión admin.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="segundo_contacto" className="block mb-1">SEGUNDO CONTACTO</label>
+                            <label for="segundo_contacto" className="block mb-1">% COMISION S</label>
                             <input type="text" id="segundo_contacto" className="form-input w-full" v-model="form.com_adm_s">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese % comisión s.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="tercer_contacto" className="block mb-1">TERCER CONTACTO</label>
+                            <label for="tercer_contacto" className="block mb-1">% PARTICIPACIÓN </label>
                             <input type="text" id="tercer_contacto" className="form-input w-full" v-model="form.porcentaje_participacion">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese % participación.</p>
                         </div>                                   
                         <div className="mb-4">
-                            <label for="documento_atribucion" className="block mb-1">¿REALIZO LA VENTA?</label>
+                            <label for="documento_atribucion" className="block mb-1">DOCUMENTO ATRIBUCION</label>
                             <input type="text" id="documento_atribucion" className="form-input w-full" v-model="form.documento_atribucion">
                             <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="plataforma_id" className="block mb-1">¿FUTURO SOCIO?</label>
+                            <label for="plataforma_id" className="block mb-1">PLATAFORMA ID</label>
                             <input type="text" id="plataforma_id" className="form-input w-full" v-model="form.plataforma_id">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese plataforma.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="transaccion_id" className="block mb-1">¿FUTURO SOCIO?</label>
+                            <label for="transaccion_id" className="block mb-1">ID TRANSACCIÓN</label>
                             <input type="text" id="transaccion_id" className="form-input w-full" v-model="form.transaccion_id">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese transacción id.</p>
                         </div>
 
                         <!-- Agrega los demás campos del formulario con la misma estructura -->

@@ -388,17 +388,17 @@ const save = () =>
                             <h2 className="text-xl font-thin mb-4">{{ modalTitle }}</h2>
                         </div> 
                         <div className="mb-4">
-                            <label for="porcentaje_c_v" className="block mb-1">DNI</label>
+                            <label for="porcentaje_c_v" className="block mb-1">% CLIENTE</label>
                             <input type="text" id="porcentaje_c_v" className="form-input w-full" v-model="form.porcentaje_c_v">
                             <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="plataforma_id" className="block mb-1">DEPARTAMENTO</label>
+                            <label for="plataforma_id" className="block mb-1">PLATAFORMA ID</label>
                             <input type="text" id="plataforma_id" className="form-input w-full" v-model="form.plataforma_id">
                             <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="codigo_sede" className="block mb-1">PROVINCIA</label>
+                            <label for="codigo_sede" className="block mb-1">CODIGO SEDE</label>
                             <input type="text" id="codigo_sede" className="form-input w-full" v-model="form.codigo_sede">
                             <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
                         </div>
@@ -406,7 +406,7 @@ const save = () =>
 
                         <div class="flex items-center justify-end p-4 border-t">
                     <button  type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5">Aceptar</button>
-                    <button @click="showModalEdit = false" type="button" class="ml-3 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 px-5 py-2.5">Rechazar</button>
+                    <button @click="showModal = false" type="button" class="ml-3 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 px-5 py-2.5">Rechazar</button>
                 </div>
                     </form>
                 </div>

@@ -259,14 +259,7 @@ const save = () =>
         <!-- ************************************************************************************************************************************** -->         
         <div className="border px-10 py-5  border-primary-400 rounded-md  mt-3">    
             <div className="md:col-span-12 lg:col-span-12 col-span-12">
-                <!-- <div className="buttons">
-                    <Button v-for="(button, index) in buttons.value" :key="index"
-                            :button-text="button.text"
-                            :icon="button.text.match(/fa-solid (fa-\w+)/)[1]"
-                            :button-class="button.className"
-                            :handle-click="handleButtonClick(button.extend)">
-                    </Button>
-                </div> -->
+               
                 <div class="overflow-x-auto my-5">
                     <DataTable 
                     :data="transacciones"
@@ -280,7 +273,7 @@ const save = () =>
                         dom: 'Bfrtip',
                         buttons: buttons,
                         pageLength: 10,
-                        scrollX: true  // Esta línea permite el desplazamiento horizontal
+                        scrollX: true  
                     }"
                     @select="handleRowSelection"
                 >
@@ -295,36 +288,7 @@ const save = () =>
                     </tr>
                     </thead>
                 </DataTable>
-                    <!-- <DataTable 
-                    :data="transacciones" 
-                    :columns="columns" 
-                    ref="table"
-                    class="display"
-                    :options="{ 
-                        select: true,
-                        responsive: true, 
-                        autoWidth: false, 
-                        dom: 'Bfrtip',
-                        buttons: buttons,
-                        pageLength: 10
-                    }"
-                        @select="handleRowSelection"
-                    >
-                        <thead>
-                            <tr>
-                                <th className="px-4 py-2">Id</th>
-                                <th className="px-4 py-2">fecha</th>
-                                <th className="px-4 py-2">codigo_sede</th>
-                                <th className="px-4 py-2"> ticket </th>
-                                <th className="px-4 py-2">venta</th>
-                                <th className="px-4 py-2">utilidad</th>
-
-                            </tr>
-                        </thead>
-                    </DataTable> -->
-                    
-
-                    
+                 
                 </div>
             </div>
 
@@ -352,29 +316,29 @@ const save = () =>
                             <h2 className="text-xl font-thin mb-4">{{ modalTitleEdit }}</h2>
                         </div> 
                         <div className="mb-4">
-                            <label for="fecha" className="block mb-1">DNI</label>
+                            <label for="fecha" className="block mb-1">FECHA</label>
                             <input type="text" id="fecha" className="form-input w-full" v-model="formEdit.fecha">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese fecha.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="codigo_sede" className="block mb-1">DEPARTAMENTO</label>
+                            <label for="codigo_sede" className="block mb-1">CODIGO SEDE</label>
                             <input type="text" id="codigo_sede" className="form-input w-full" v-model="formEdit.codigo_sede">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese codigo de sede.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="ticket" className="block mb-1">PROVINCIA</label>
+                            <label for="ticket" className="block mb-1">NUMERO DE TICKET</label>
                             <input type="text" id="ticket" className="form-input w-full" v-model="formEdit.ticket">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese número de ticket.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="venta" className="block mb-1">ESTADO</label>
+                            <label for="venta" className="block mb-1">MONTO DE VENTA</label>
                             <input type="text" id="venta" className="form-input w-full" v-model="formEdit.venta">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese venta.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="ruc" className="block mb-1">DISTRITO</label>
+                            <label for="ruc" className="block mb-1">UTILIDAD</label>
                             <input type="text" id="ruc" className="form-input w-full" v-model="formEdit.utilidad">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese utilidad.</p>
                         </div>             
 
                         <div class="flex items-center justify-end p-4 border-t">
@@ -409,29 +373,29 @@ const save = () =>
                             <h2 className="text-xl font-thin mb-4">{{ modalTitleEdit }}</h2>
                         </div> 
                         <div className="mb-4">
-                            <label for="fecha" className="block mb-1">DNI</label>
+                            <label for="fecha" className="block mb-1">FECHA</label>
                             <input type="text" id="fecha" className="form-input w-full" v-model="form.fecha">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese fecha.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="codigo_sede" className="block mb-1">DEPARTAMENTO</label>
+                            <label for="codigo_sede" className="block mb-1">CODIGO DE SEDE</label>
                             <input type="text" id="codigo_sede" className="form-input w-full" v-model="form.codigo_sede">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese codigo de sede.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="ticket" className="block mb-1">PROVINCIA</label>
+                            <label for="ticket" className="block mb-1">TICKET</label>
                             <input type="text" id="ticket" className="form-input w-full" v-model="form.ticket">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese número de ticket.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="venta" className="block mb-1">ESTADO</label>
+                            <label for="venta" className="block mb-1">MONTO DE VENTA</label>
                             <input type="text" id="venta" className="form-input w-full" v-model="form.venta">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese venta.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="ruc" className="block mb-1">DISTRITO</label>
+                            <label for="ruc" className="block mb-1">UTILIDAD</label>
                             <input type="text" id="ruc" className="form-input w-full" v-model="form.utilidad">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese utilidad.</p>
                         </div>             
 
                         <div class="flex items-center justify-end p-4 border-t">

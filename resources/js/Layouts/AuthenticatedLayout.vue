@@ -10,6 +10,15 @@ import { usePermission } from "@/composables/permissions";
 
 const showingNavigationDropdown = ref(false);
 const { hasRole } = usePermission();
+
+const menuItems = ref([
+  { label: 'Inicio', href: '/' },
+  { label: 'Perfil', href: '/perfil' },
+  { label: 'Configuración', href: '/configuracion' },
+  { label: 'Ayuda', href: '/ayuda' },
+  { label: 'Cerrar sesión', href: '/logout' }
+]);
+
 </script>
 
 <template>

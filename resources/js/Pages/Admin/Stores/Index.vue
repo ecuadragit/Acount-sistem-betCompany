@@ -191,24 +191,24 @@ const openModalEdit = (title) => {
         return;
     }
   
-    locales.value.codigo=selectedRowsData.codigo
-    locales.value.grupo=selectedRowsData.grupo
-    locales.value.administrador=selectedRowsData.administrador
-    locales.value.dni=selectedRowsData.dni
-    locales.value.ruc=selectedRowsData.ruc
-    locales.value.asociado=selectedRowsData.asociado
-    locales.value.modelo=selectedRowsData.modelo
-    locales.value.fachada=selectedRowsData.fachada
-    locales.value.interior_del_local=selectedRowsData.interior_del_local
-    locales.value.garantia=selectedRowsData.garantia
-    locales.value.numero_operacion=selectedRowsData.numero_operacion
-    locales.value.monto_garantia=selectedRowsData.monto_garantia
-    locales.value.tipo_negocio=selectedRowsData.tipo_negocio
-    locales.value.estado=selectedRowsData.estado
-    locales.value.detalle_nombre=selectedRowsData.detalle_nombre
-    locales.value.agente_encargado_de_venta=selectedRowsData.agente_encargado_de_venta
+    formEdit.value.codigo=selectedRowsData.codigo
+    formEdit.value.grupo=selectedRowsData.grupo
+    formEdit.value.administrador=selectedRowsData.administrador
+    formEdit.value.dni=selectedRowsData.dni
+    formEdit.value.ruc=selectedRowsData.ruc
+    formEdit.value.asociado=selectedRowsData.asociado
+    formEdit.value.modelo=selectedRowsData.modelo
+    formEdit.value.fachada=selectedRowsData.fachada
+    formEdit.value.interior_del_local=selectedRowsData.interior_del_local
+    formEdit.value.garantia=selectedRowsData.garantia
+    formEdit.value.numero_operacion=selectedRowsData.numero_operacion
+    formEdit.value.monto_garantia=selectedRowsData.monto_garantia
+    formEdit.value.tipo_negocio=selectedRowsData.tipo_negocio
+    formEdit.value.estado=selectedRowsData.estado
+    formEdit.value.detalle_nombre=selectedRowsData.detalle_nombre
+    formEdit.value.agente_encargado_de_venta=selectedRowsData.agente_encargado_de_venta
 
-    console.log(locales);
+    console.log(formEdit);
     modalTitleEdit.value = title;
     showModalEdit.value = true;  
 
@@ -388,84 +388,84 @@ const save = () => {
                             <h2 className="text-xl font-thin mb-4">{{ modalTitleEdit }}</h2>
                         </div>
                         <div className="mb-4">
-                            <label for="codigo" className="block mb-1">DNI</label>
-                            <input type="text" id="codigo" className="form-input w-full" v-model="locales.codigo">
+                            <label for="codigo" className="block mb-1">CODIGO</label>
+                            <input type="text" id="codigo" className="form-input w-full" v-model="formEdit.codigo">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del codigo.</p>
+                        </div>
+                        <div className="mb-4">
+                            <label for="grupo" className="block mb-1">GRUPO</label>
+                            <input type="text" id="grupo" className="form-input w-full" v-model="formEdit.grupo">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del grupo.</p>
+                        </div>
+                        <div className="mb-4">
+                            <label for="administrador" className="block mb-1">ADMINISTRADOR</label>
+                            <input type="text" id="administrador" className="form-input w-full" v-model="formEdit.administrador">
                             <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="grupo" className="block mb-1">DEPARTAMENTO</label>
-                            <input type="text" id="grupo" className="form-input w-full" v-model="locales.grupo">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <label for="dni" className="block mb-1">DNI</label>
+                            <input type="text" id="dni" className="form-input w-full" v-model="formEdit.dni">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese dni.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="administrador" className="block mb-1">PROVINCIA</label>
-                            <input type="text" id="administrador" className="form-input w-full" v-model="locales.administrador">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <label for="ruc" className="block mb-1">RUC</label>
+                            <input type="text" id="ruc" className="form-input w-full" v-model="formEdit.ruc">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese ruc.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="dni" className="block mb-1">ESTADO</label>
-                            <input type="text" id="dni" className="form-input w-full" v-model="locales.dni">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <label for="asociado" className="block mb-1">ASOCIADO</label>
+                            <input type="text" id="asociado" className="form-input w-full" v-model="formEdit.asociado">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del asociado.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="ruc" className="block mb-1">DISTRITO</label>
-                            <input type="text" id="ruc" className="form-input w-full" v-model="locales.ruc">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <label for="modelo" className="block mb-1">MODELO</label>
+                            <input type="text" id="modelo" className="form-input w-full" v-model="formEdit.modelo">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del modelo.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="asociado" className="block mb-1">DIRECCIÓN</label>
-                            <input type="text" id="asociado" className="form-input w-full" v-model="locales.asociado">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <label for="fachada" className="block mb-1">FACHADA</label>
+                            <input type="text" id="fachada" className="form-input w-full" v-model="formEdit.fachada">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese fachada.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="modelo" className="block mb-1">CELULAR</label>
-                            <input type="text" id="modelo" className="form-input w-full" v-model="locales.modelo">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
-                        </div>
-                        <div className="mb-4">
-                            <label for="fachada" className="block mb-1">RUC</label>
-                            <input type="text" id="fachada" className="form-input w-full" v-model="locales.fachada">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
-                        </div>
-                        <div className="mb-4">
-                            <label for="interior_del_local" className="block mb-1">RAZON SOCIAL</label>
-                            <input type="text" id="interior_del_local" className="form-input w-full" v-model="locales.interior_del_local">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <label for="interior_del_local" className="block mb-1">INTERIOR DEL LOCAL</label>
+                            <input type="text" id="interior_del_local" className="form-input w-full" v-model="formEdit.interior_del_local">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese Interior del Local.</p>
                         </div>
                         <div className="mb-4">
                             <label for="correo" className="block mb-1">CORREO</label>
-                            <input type="text" id="correo" className="form-input w-full" v-model="locales.garantia">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="correo" className="form-input w-full" v-model="formEdit.garantia">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese garantia.</p>
                         </div>
                         <div className="mb-4">
                             <label for="numero_operacion" className="block mb-1">CELULAR</label>
-                            <input type="text" id="numero_operacion" className="form-input w-full" v-model="locales.numero_operacion">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="numero_operacion" className="form-input w-full" v-model="formEdit.numero_operacion">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el número de operación.</p>
                         </div>
                         <div className="mb-4">
                             <label for="monto_garantia" className="block mb-1">RUC</label>
-                            <input type="text" id="monto_garantia" className="form-input w-full" v-model="locales.monto_garantia">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="monto_garantia" className="form-input w-full" v-model="formEdit.monto_garantia">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el monto de garantia.</p>
                         </div>
                         <div className="mb-4">
                             <label for="tipo_negocio" className="block mb-1">RAZON SOCIAL</label>
-                            <input type="text" id="tipo_negocio" className="form-input w-full" v-model="locales.tipo_negocio">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="tipo_negocio" className="form-input w-full" v-model="formEdit.tipo_negocio">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el tipo de negocio.</p>
                         </div>
                         <div className="mb-4">
                             <label for="estado" className="block mb-1">CORREO</label>
-                            <input type="text" id="estado" className="form-input w-full" v-model="locales.estado">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="estado" className="form-input w-full" v-model="formEdit.estado">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el estado.</p>
                         </div>
                         <div className="mb-4">
                             <label for="detalle_nombre" className="block mb-1">RAZON SOCIAL</label>
-                            <input type="text" id="detalle_nombre" className="form-input w-full" v-model="locales.detalle_nombre">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="detalle_nombre" className="form-input w-full" v-model="formEdit.detalle_nombre">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el detalle del nombre.</p>
                         </div>
                         <div className="mb-4">
                             <label for="detalle_nombre" className="block mb-1">CORREO</label>
-                            <input type="text" id="detalle_nombre" className="form-input w-full" v-model="locales.agente_encargado_de_venta">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="detalle_nombre" className="form-input w-full" v-model="formEdit.agente_encargado_de_venta">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el agente encargado de la venta.</p>
                         </div>
                     
 
@@ -496,89 +496,88 @@ const save = () => {
                 </div>
                 <div class="p-4 space-y-4 overflow-y-auto">
                         <form @submit.prevent="save" classNaem="max-w-lg mx-auto border border-gray-300 p-6 my-5 rounded-lg overflow-y-auto">
-                        
-                        <div className="my-2">
+                            <div className="my-2">
                             <h2 className="text-xl font-thin mb-4">{{ modalTitleEdit }}</h2>
                         </div>
                         <div className="mb-4">
-                            <label for="codigo" className="block mb-1">DNI</label>
+                            <label for="codigo" className="block mb-1">CODIGO</label>
                             <input type="text" id="codigo" className="form-input w-full" v-model="form.codigo">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del codigo.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="grupo" className="block mb-1">DEPARTAMENTO</label>
+                            <label for="grupo" className="block mb-1">GRUPO</label>
                             <input type="text" id="grupo" className="form-input w-full" v-model="form.grupo">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del grupo.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="administrador" className="block mb-1">PROVINCIA</label>
+                            <label for="administrador" className="block mb-1">ADMINISTRADOR</label>
                             <input type="text" id="administrador" className="form-input w-full" v-model="form.administrador">
                             <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="dni" className="block mb-1">ESTADO</label>
+                            <label for="dni" className="block mb-1">DNI</label>
                             <input type="text" id="dni" className="form-input w-full" v-model="form.dni">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese dni.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="ruc" className="block mb-1">DISTRITO</label>
+                            <label for="ruc" className="block mb-1">RUC</label>
                             <input type="text" id="ruc" className="form-input w-full" v-model="form.ruc">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese ruc.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="asociado" className="block mb-1">DIRECCIÓN</label>
+                            <label for="asociado" className="block mb-1">ASOCIADO</label>
                             <input type="text" id="asociado" className="form-input w-full" v-model="form.asociado">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del asociado.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="modelo" className="block mb-1">CELULAR</label>
+                            <label for="modelo" className="block mb-1">MODELO</label>
                             <input type="text" id="modelo" className="form-input w-full" v-model="form.modelo">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del modelo.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="fachada" className="block mb-1">RUC</label>
+                            <label for="fachada" className="block mb-1">FACHADA</label>
                             <input type="text" id="fachada" className="form-input w-full" v-model="form.fachada">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese fachada.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="interior_del_local" className="block mb-1">RAZON SOCIAL</label>
+                            <label for="interior_del_local" className="block mb-1">INTERIOR DEL LOCAL</label>
                             <input type="text" id="interior_del_local" className="form-input w-full" v-model="form.interior_del_local">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese Interior del Local.</p>
                         </div>
                         <div className="mb-4">
                             <label for="correo" className="block mb-1">CORREO</label>
                             <input type="text" id="correo" className="form-input w-full" v-model="form.garantia">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese garantia.</p>
                         </div>
                         <div className="mb-4">
                             <label for="numero_operacion" className="block mb-1">CELULAR</label>
                             <input type="text" id="numero_operacion" className="form-input w-full" v-model="form.numero_operacion">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el número de operación.</p>
                         </div>
                         <div className="mb-4">
                             <label for="monto_garantia" className="block mb-1">RUC</label>
                             <input type="text" id="monto_garantia" className="form-input w-full" v-model="form.monto_garantia">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el monto de garantia.</p>
                         </div>
                         <div className="mb-4">
                             <label for="tipo_negocio" className="block mb-1">RAZON SOCIAL</label>
                             <input type="text" id="tipo_negocio" className="form-input w-full" v-model="form.tipo_negocio">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el tipo de negocio.</p>
                         </div>
                         <div className="mb-4">
                             <label for="estado" className="block mb-1">CORREO</label>
                             <input type="text" id="estado" className="form-input w-full" v-model="form.estado">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el estado.</p>
                         </div>
                         <div className="mb-4">
                             <label for="detalle_nombre" className="block mb-1">RAZON SOCIAL</label>
                             <input type="text" id="detalle_nombre" className="form-input w-full" v-model="form.detalle_nombre">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el detalle del nombre.</p>
                         </div>
                         <div className="mb-4">
                             <label for="detalle_nombre" className="block mb-1">CORREO</label>
-                            <input type="text" id="detalle_nombre" className="form-input w-full" v-model="locales.agente_encargado_de_venta">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="detalle_nombre" className="form-input w-full" v-model="form.agente_encargado_de_venta">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el agente encargado de la venta.</p>
                         </div>
                     
 

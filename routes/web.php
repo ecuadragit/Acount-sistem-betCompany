@@ -22,18 +22,20 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-/***/
-
-Route::get('/test', [ClientController::class, 'index'])->name('clients.index');
-Route::get('/testperson', [PersonController::class, 'index'])->name('persons.index');
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+// Route::get('/test', [ClientController::class, 'index'])->name('clients.index');
+// Route::get('/testperson', [PersonController::class, 'index'])->name('persons.index');
 Route::get('/store', [StoreController::class, 'index'])->name('stores.index');
 Route::get('/transaction', [TransactionController::class, 'index'])->name('transactions.index');
 Route::get('/transactiondetail', [TransactionController::class, 'index'])->name('transactionsdetail.index');
 Route::get('/platform', [PlatformController::class, 'index'])->name('platforms.index');
 Route::get('/utility', [UtilityController::class, 'index'])->name('utilitys.index');
 
-/***/
-
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+/****************************************************************************************************************/
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -43,10 +45,19 @@ Route::get('/', function () {
     ]);
 });
 
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+/****************************************************************************************************************/
 Route::resource('/users', UserController::class);
 Route::resource('/roles', RoleController::class);
 Route::resource('/permissions', PermissionController::class);
 Route::resource('/posts', PostController::class);
+
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+/****************************************************************************************************************/
 
 Route::delete('/roles/{role}/permissions/{permission}', RevokePermissionFromRoleController::class)
     ->name('roles.permissions.destroy');
@@ -60,6 +71,10 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -67,10 +82,47 @@ Route::middleware('auth')->group(function () {
   //Route::get('/test', [ClientsController::class, 'index'])->name('clients.test');
 });
 
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+/***************************************************************************************************************/
 
+
+// Route::middleware('auth')->group(function () {
+   
+// });
+Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
+Route::post('/clients', [ClientController::class, 'store'])->name('clients.store');
+Route::get('/clients/{cliente}', [ClientController::class, 'show'])->name('clients.show');
+Route::get('/clients/{cliente}/edit', [ClientController::class, 'edit'])->name('clients.edit');
+Route::put('/clients/{cliente}', [ClientController::class, 'update'])->name('clients.update');
+Route::delete('/clients/{cliente}', [ClientController::class, 'destroy'])->name('clients.destroy');
+
+
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+
+
+Route::get('/persons', [PersonController::class, 'index'])->name('persons.index');
+Route::post('/persons', [PersonController::class, 'store'])->name('persons.store');
+Route::get('/persons/{persons}', [PersonController::class, 'show'])->name('persons.show');
+Route::get('/persons/{persons}/edit', [PersonController::class, 'edit'])->name('persons.edit');
+Route::put('/persons/{cliepersonsnte}', [PersonController::class, 'update'])->name('persons.update');
+Route::delete('/persons/{persons}', [PersonController::class, 'destroy'])->name('persons.destroy');
+
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+/****************************************************************************************************************/
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 });
 
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+
 require __DIR__ . '/auth.php';
+/****************************************************************************************************************/
+/****************************************************************************************************************/
+/****************************************************************************************************************/

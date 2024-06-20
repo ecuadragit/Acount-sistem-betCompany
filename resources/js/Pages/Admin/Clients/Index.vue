@@ -1,7 +1,7 @@
 <script setup>
 
     import axios from 'axios';
-    import { ref, onMounted, watch   } from 'vue';
+    import { ref, onMounted, watch  } from 'vue';
     import {sendRequest,confirmation,show_alert} from '../../../utils/functions';
     import Swal from 'sweetalert2';
 /**********************************************************/
@@ -177,20 +177,20 @@ onMounted(() => {
 /**************************************************************************************************************** */
 const openModal = (title) => 
 { 
-    // clientes.value.fecha='';
-    // clientes.value.dni= "";
-    // clientes.value.medio_de_contacto= "";
-    // clientes.value.medio_de_respuesta= "";
-    // clientes.value.como_llego_a_la_marca= "";
-    // clientes.value.tipo_negocio= "";
-    // clientes.value.estado= "";
-    // clientes.value.respuesta_asesor= "";
-    // clientes.value.primer_contacto= "";
-    // clientes.value.segundo_contacto= "";
-    // clientes.value.tercer_contacto= "";
-    // clientes.value.contacto= "";
-    // clientes.value.realizo_la_venta= "";
-    // clientes.value.futuro_socio= "";
+    form.value.fecha='';
+    form.value.dni= "";
+    form.value.medio_de_contacto= "";
+    form.value.medio_de_respuesta= "";
+    form.value.como_llego_a_la_marca= "";
+    form.value.tipo_negocio= "";
+    form.value.estado= "";
+    form.value.respuesta_asesor= "";
+    form.value.primer_contacto= "";
+    form.value.segundo_contacto= "";
+    form.value.tercer_contacto= "";
+    form.value.contacto= "";
+    form.value.realizo_la_venta= "";
+    form.value.futuro_socio= "";
     
     modalTitle.value = title;
     showModal.value = true;  
@@ -212,22 +212,22 @@ const openModalEdit = (title) => {
         return;
     }
         
-    clientes.value.fecha=selectedRowsData.fecha
-    clientes.value.dni=selectedRowsData.dni
-    clientes.value.medio_de_contacto=selectedRowsData.medio_de_contacto
-    clientes.value.medio_de_respuesta=selectedRowsData.medio_de_respuesta
-    clientes.value.como_llego_a_la_marca=selectedRowsData.como_llego_a_la_marca
-    clientes.value.tipo_negocio=selectedRowsData.tipo_negocio
-    clientes.value.estado=selectedRowsData.estado
-    clientes.value.respuesta_asesor=selectedRowsData.respuesta_asesor
-    clientes.value.primer_contacto=selectedRowsData.primer_contacto
-    clientes.value.segundo_contacto=selectedRowsData.segundo_contacto
-    clientes.value.tercer_contacto=selectedRowsData.tercer_contacto
-    clientes.value.contacto=selectedRowsData.contacto
-    clientes.value.realizo_la_venta=selectedRowsData.realizo_la_venta
-    clientes.value.futuro_socio=selectedRowsData.futuro_socio
+    formEdit.value.fecha=selectedRowsData.fecha
+    formEdit.value.dni=selectedRowsData.dni
+    formEdit.value.medio_de_contacto=selectedRowsData.medio_de_contacto
+    formEdit.value.medio_de_respuesta=selectedRowsData.medio_de_respuesta
+    formEdit.value.como_llego_a_la_marca=selectedRowsData.como_llego_a_la_marca
+    formEdit.value.tipo_negocio=selectedRowsData.tipo_negocio
+    formEdit.value.estado=selectedRowsData.estado
+    formEdit.value.respuesta_asesor=selectedRowsData.respuesta_asesor
+    formEdit.value.primer_contacto=selectedRowsData.primer_contacto
+    formEdit.value.segundo_contacto=selectedRowsData.segundo_contacto
+    formEdit.value.tercer_contacto=selectedRowsData.tercer_contacto
+    formEdit.value.contacto=selectedRowsData.contacto
+    formEdit.value.realizo_la_venta=selectedRowsData.realizo_la_venta
+    formEdit.value.futuro_socio=selectedRowsData.futuro_socio
 
-    console.log(clientes);
+    console.log(formEdit);
     modalTitleEdit.value = title;
     showModalEdit.value = true;  
 
@@ -367,38 +367,12 @@ filaSeleccionada.value = selectedRows > 0;
                             </tr>
                         </thead>
                     </DataTable>
-                    
-                    <!-- <DataTable 
-                    :data="clientes" 
-                    :columns="columns" 
-                    ref="table"
-                  class="display"
-                    :options="{ 
-                        select:true,
-                        responsive: true, 
-                        autoWidth: false, 
-                        dom: 'Bfrtip',
-                        buttons: buttons,
-                        pageLength: 10
-                    }"
-                        @select="handleRowSelection"
-                    /> -->
-                   
+                  
                     
                 </div>
             </div>
 
-            <!-- <button @click="add">Add new row</button><br />
-<button @click="update">Update selected rows</button><br />
-<button @click="remove">Delete selected rows</button>
- 
-            <DataTable
-                class="display"
-                :columns="columns"
-                :data="dataDisplay"
-                :options="{ select: true }"
-                ref="table"
-            /> -->
+
         </div>
         <!-- ************************************************************************************************************************************** -->
         <!-- MODAL EDIT  -->
@@ -421,82 +395,78 @@ filaSeleccionada.value = selectedRows > 0;
                     <form @submit.prevent="update" classNaem="max-w-lg mx-auto border border-gray-300 p-6 my-5 rounded-lg overflow-y-auto">
                         
                         <div className="my-2">
-                            <h2 className="text-xl font-thin mb-4">Título fino</h2>
+                            <h2 className="text-xl font-thin mb-4">{{modalTitleEdit}}</h2>
                         </div>
                         <div className="mb-4">
                             <label for="fecha" className="block mb-1">FECHA</label>
-                            <input type="text" id="fecha" className="form-input w-full" v-model="clientes.fecha">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="fecha" className="form-input w-full" v-model="formEdit.fecha">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese fecha.</p>
                         </div>
                         <div className="mb-4">
                             <label for="dni" className="block mb-1">DNI</label>
-                            <input type="text" id="dni" className="form-input w-full" v-model="clientes.dni">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="dni" className="form-input w-full" v-model="formEdit.dni">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese dni.</p>
                         </div>
                         <div className="mb-4">
                             <label for="medio_de_contacto" className="block mb-1">MEDIO DE CONTACTO</label>
-                            <input type="text" id="medio_de_contacto" className="form-input w-full" v-model="clientes.medio_de_contacto">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="medio_de_contacto" className="form-input w-full" v-model="formEdit.medio_de_contacto">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese medio de contacto.</p>
                         </div>
                         <div className="mb-4">
                             <label for="medio_de_respuesta" className="block mb-1">MEDIO DE RESPUESTA</label>
-                            <input type="text" id="medio_de_respuesta" className="form-input w-full" v-model="clientes.medio_de_respuesta">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="medio_de_respuesta" className="form-input w-full" v-model="formEdit.medio_de_respuesta">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese medio de respuesta.</p>
                         </div>
                         <div className="mb-4">
                             <label for="como_llego_a_la_marca" className="block mb-1">RESPUESTA ASESOR</label>
-                            <input type="text" id="como_llego_a_la_marca" className="form-input w-full" v-model="clientes.como_llego_a_la_marca">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="como_llego_a_la_marca" className="form-input w-full" v-model="formEdit.como_llego_a_la_marca">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese respuesta de asesor.</p>
                         </div>
+                        
                         <div className="mb-4">
-                            <label for="primer_contacto" className="block mb-1">PRIMER CONTACTO</label>
-                            <input type="text" id="primer_contacto" className="form-input w-full" v-model="clientes.primer_contacto">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
-                        </div>
-                        <div className="mb-4">
-                            <label for="fecha" className="block mb-1">FECHA</label>
+                            <label for="fecha" className="block mb-1">Como Llego a la Marca</label>
                             <input type="text" id="fecha" className="form-input w-full" v-model="clientes.como_llego_a_la_marca">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese como llego a la marca.</p>
                         </div>
                         <div className="mb-4">
                             <label for="tipo_negocio" className="block mb-1">TIPO DE NEGOCIO</label>
-                            <input type="text" id="tipo_negocio" className="form-input w-full" v-model="clientes.tipo_negocio">
+                            <input type="text" id="tipo_negocio" className="form-input w-full" v-model="formEdit.tipo_negocio">
                             <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
                         </div>
                         <div className="mb-4">
                             <label for="estado" className="block mb-1">ESTADO</label>
-                            <input type="text" id="estado" className="form-input w-full" v-model="clientes.estado">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="estado" className="form-input w-full" v-model="formEdit.estado">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese estado.</p>
                         </div>
                         <div className="mb-4">
                             <label for="respuesta_asesor" className="block mb-1">RESPUESTA ASESOR</label>
-                            <input type="text" id="respuesta_asesor" className="form-input w-full" v-model="clientes.respuesta_asesor">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="respuesta_asesor" className="form-input w-full" v-model="formEdit.respuesta_asesor">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese respuesta del asesor.</p>
                         </div>
                         <div className="mb-4">
                             <label for="primer_contacto" className="block mb-1">PRIMER CONTACTO</label>
-                            <input type="text" id="primer_contacto" className="form-input w-full" v-model="clientes.primer_contacto">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="primer_contacto" className="form-input w-full" v-model="formEdit.primer_contacto">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del primer contacto.</p>
                         </div>
                         <div className="mb-4">
                             <label for="segundo_contacto" className="block mb-1">SEGUNDO CONTACTO</label>
-                            <input type="text" id="segundo_contacto" className="form-input w-full" v-model="clientes.segundo_contacto">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="segundo_contacto" className="form-input w-full" v-model="formEdit.segundo_contacto">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del segundo contacto.</p>
                         </div>
                         <div className="mb-4">
                             <label for="tercer_contacto" className="block mb-1">TERCER CONTACTO</label>
-                            <input type="text" id="tercer_contacto" className="form-input w-full" v-model="clientes.tercer_contacto">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="tercer_contacto" className="form-input w-full" v-model="formEdit.tercer_contacto">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del tercer contacto.</p>
                         </div>                                   
                         <div className="mb-4">
                             <label for="realizo_la_venta" className="block mb-1">¿REALIZO LA VENTA?</label>
-                            <input type="text" id="realizo_la_venta" className="form-input w-full" v-model="clientes.realizo_la_venta">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="realizo_la_venta" className="form-input w-full" v-model="formEdit.realizo_la_venta">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese si se realizo la venta.</p>
                         </div>
                         <div className="mb-4">
                             <label for="futuro_socio" className="block mb-1">¿FUTURO SOCIO?</label>
-                            <input type="text" id="futuro_socio" className="form-input w-full" v-model="clientes.futuro_socio">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="futuro_socio" className="form-input w-full" v-model="formEdit.futuro_socio">
+                            <p className="text-sm text-gray-500 mt-1">¿Es futuro socio?.</p>
                         </div>
 
                         <!-- Agrega los demás campos del formulario con la misma estructura -->
@@ -504,7 +474,7 @@ filaSeleccionada.value = selectedRows > 0;
                     <button  type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5">Aceptar</button>
                     <button @click="showModalEdit = false" type="button" class="ml-3 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 px-5 py-2.5">Rechazar</button>
                 </div>
-            </form>
+                    </form>
                 </div>
             </div>
         </div>
@@ -528,45 +498,40 @@ filaSeleccionada.value = selectedRows > 0;
                 </div>
                 <!-- Modal body -->
                 <div class="p-4 space-y-4 overflow-y-auto">
-                    <form @submit.prevent="save" classNaem="max-w-lg mx-auto border border-gray-300 p-6 my-5 rounded-lg overflow-y-auto">
-                        
+                    <form @submit.prevent="save" classNaem="max-w-lg mx-auto border border-gray-300 p-6 my-5 rounded-lg overflow-y-auto">                                           
                         <div className="my-2">
-                            <h2 className="text-xl font-thin mb-4">Título fino</h2>
+                            <h2 className="text-xl font-thin mb-4">{{ modalTitle }}</h2>
                         </div>
                         <div className="mb-4">
                             <label for="fecha" className="block mb-1">FECHA</label>
-                            <input type="date" id="fecha" className="form-input w-full" v-model="form.fecha">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="fecha" className="form-input w-full" v-model="form.fecha">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese fecha.</p>
                         </div>
                         <div className="mb-4">
                             <label for="dni" className="block mb-1">DNI</label>
                             <input type="text" id="dni" className="form-input w-full" v-model="form.dni">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese dni.</p>
                         </div>
                         <div className="mb-4">
                             <label for="medio_de_contacto" className="block mb-1">MEDIO DE CONTACTO</label>
                             <input type="text" id="medio_de_contacto" className="form-input w-full" v-model="form.medio_de_contacto">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese medio de contacto.</p>
                         </div>
                         <div className="mb-4">
                             <label for="medio_de_respuesta" className="block mb-1">MEDIO DE RESPUESTA</label>
                             <input type="text" id="medio_de_respuesta" className="form-input w-full" v-model="form.medio_de_respuesta">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese medio de respuesta.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="como_llego_a_la_marca" className="block mb-1">¿COMO LLEOG A LA MARCA?</label>
+                            <label for="como_llego_a_la_marca" className="block mb-1">RESPUESTA ASESOR</label>
                             <input type="text" id="como_llego_a_la_marca" className="form-input w-full" v-model="form.como_llego_a_la_marca">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese respuesta de asesor.</p>
                         </div>
+                        
                         <div className="mb-4">
-                            <label for="primer_contacto" className="block mb-1">PRIMER CONTACTO</label>
-                            <input type="text" id="primer_contacto" className="form-input w-full" v-model="form.primer_contacto">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
-                        </div>
-                        <div className="mb-4">
-                            <label for="fecha" className="block mb-1">¿COOM LLEGO A LA MARCA?</label>
+                            <label for="fecha" className="block mb-1">Como Llego a la Marca</label>
                             <input type="text" id="fecha" className="form-input w-full" v-model="form.como_llego_a_la_marca">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese como llego a la marca.</p>
                         </div>
                         <div className="mb-4">
                             <label for="tipo_negocio" className="block mb-1">TIPO DE NEGOCIO</label>
@@ -576,45 +541,46 @@ filaSeleccionada.value = selectedRows > 0;
                         <div className="mb-4">
                             <label for="estado" className="block mb-1">ESTADO</label>
                             <input type="text" id="estado" className="form-input w-full" v-model="form.estado">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese estado.</p>
                         </div>
                         <div className="mb-4">
                             <label for="respuesta_asesor" className="block mb-1">RESPUESTA ASESOR</label>
-                            <input type="date" id="respuesta_asesor" className="form-input w-full" v-model="form.respuesta_asesor">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <input type="text" id="respuesta_asesor" className="form-input w-full" v-model="form.respuesta_asesor">
+                            <p className="text-sm text-gray-500 mt-1">Ingrese respuesta del asesor.</p>
                         </div>
                         <div className="mb-4">
                             <label for="primer_contacto" className="block mb-1">PRIMER CONTACTO</label>
                             <input type="text" id="primer_contacto" className="form-input w-full" v-model="form.primer_contacto">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del primer contacto.</p>
                         </div>
                         <div className="mb-4">
-                            <label for="segundo_contacto" className="block mb-1">MEDIO DE CONTACTO</label>
+                            <label for="segundo_contacto" className="block mb-1">SEGUNDO CONTACTO</label>
                             <input type="text" id="segundo_contacto" className="form-input w-full" v-model="form.segundo_contacto">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del segundo contacto.</p>
                         </div>
                         <div className="mb-4">
                             <label for="tercer_contacto" className="block mb-1">TERCER CONTACTO</label>
                             <input type="text" id="tercer_contacto" className="form-input w-full" v-model="form.tercer_contacto">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del tercer contacto.</p>
                         </div>                                   
                         <div className="mb-4">
-                            <label for="realizo_la_venta" className="block mb-1">¿REALIZO VENTA?</label>
+                            <label for="realizo_la_venta" className="block mb-1">¿REALIZO LA VENTA?</label>
                             <input type="text" id="realizo_la_venta" className="form-input w-full" v-model="form.realizo_la_venta">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese si se realizo la venta.</p>
                         </div>
                         <div className="mb-4">
                             <label for="futuro_socio" className="block mb-1">¿FUTURO SOCIO?</label>
                             <input type="text" id="futuro_socio" className="form-input w-full" v-model="form.futuro_socio">
-                            <p className="text-sm text-gray-500 mt-1">¿SE REALIZO VENTA?</p>
+                            <p className="text-sm text-gray-500 mt-1">¿Es futuro socio?.</p>
                         </div>
+
 
                         <!-- Agrega los demás campos del formulario con la misma estructura -->
                         <div class="flex items-center justify-end p-4 border-t">
                     <button @click="showModal = false" type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5">Aceptar</button>
                     <button @click="showModal = false" type="button" class="ml-3 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 px-5 py-2.5">Rechazar</button>
                 </div>
-            </form>
+                    </form>
                 </div>
                 <!-- Botones de acción -->
             

@@ -269,35 +269,7 @@ const save = () =>
                     </tr>
                     </thead>
                 </DataTable>
-                    <!-- <DataTable 
-                    :data="transacciones" 
-                    :columns="columns" 
-                    ref="table"
-                    class="display"
-                    :options="{ 
-                        select: true,
-                        responsive: true, 
-                        autoWidth: false, 
-                        dom: 'Bfrtip',
-                        buttons: buttons,
-                        pageLength: 10
-                    }"
-                        @select="handleRowSelection"
-                    >
-                        <thead>
-                            <tr>
-                                <th className="px-4 py-2">Id</th>
-                                <th className="px-4 py-2">fecha</th>
-                                <th className="px-4 py-2">codigo_sede</th>
-                                <th className="px-4 py-2"> ticket </th>
-                                <th className="px-4 py-2">venta</th>
-                                <th className="px-4 py-2">utilidad</th>
-
-                            </tr>
-                        </thead>
-                    </DataTable> -->
-                    
-
+              
                     
                 </div>
             </div>
@@ -326,9 +298,9 @@ const save = () =>
                             <h2 className="text-xl font-thin mb-4">{{ modalTitleEdit }}</h2>
                         </div> 
                         <div className="mb-4">
-                            <label for="plataforma" className="block mb-1">DNI</label>
+                            <label for="plataforma" className="block mb-1">PLATAFORMA</label>
                             <input type="text" id="plataforma" className="form-input w-full" v-model="formEdit.plataforma">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre de la plataforma.</p>
                         </div>
                        
                                
@@ -365,9 +337,9 @@ const save = () =>
                             <h2 className="text-xl font-thin mb-4">{{ modalTitle }}</h2>
                         </div> 
                         <div className="mb-4">
-                            <label for="plataforma" className="block mb-1">DNI</label>
+                            <label for="plataforma" className="block mb-1">PLATAFORMA</label>
                             <input type="text" id="plataforma" className="form-input w-full" v-model="form.plataforma">
-                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre del administrador.</p>
+                            <p className="text-sm text-gray-500 mt-1">Ingrese el nombre de la plataforma.</p>
                         </div>
                        
                                
