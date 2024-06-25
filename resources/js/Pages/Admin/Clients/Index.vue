@@ -62,8 +62,8 @@ onMounted(() => {
     clientes.value = props.clientes;
     console.log(clientes);
     load.value = true;
-    table.value.dt.on('deselect', handleRowSelectionDelete);
-    table.value.dt.on('deselect', handleRowSelection);
+    //table.value.dt.on('deselect', handleRowSelectionDelete);
+   // table.value.dt.on('deselect', handleRowSelection);
 });
 
 

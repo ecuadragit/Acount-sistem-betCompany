@@ -105,7 +105,7 @@ Route::delete('/clients/{id}', [UtilityController::class, 'destroy'])->name('cli
 /****************************************************************************************************************/
 
 // Route::get('/test', [ClientController::class, 'index'])->name('clients.index');
-// Route::get('/testperson', [PersonController::class, 'index'])->name('persons.index');
+ Route::get('/testperson', [PersonController::class, 'index'])->name('persons.index');
 Route::get('/store', [StoreController::class, 'index'])->name('stores.index');
 Route::get('/transaction', [TransactionController::class, 'index'])->name('transactions.index');
 Route::get('/transactiondetail', [TransactionController::class, 'index'])->name('transactionsdetail.index');

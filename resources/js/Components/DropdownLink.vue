@@ -1,27 +1,11 @@
-<!-- DropdownLink.vue -->
+<script setup>
+import { Link } from '@inertiajs/vue3';
+</script>
+
 <template>
-    <a :href="item.href" :class="itemClass"  class="flex items-center space-x-2">
-      <span>{{ item.label }}</span>
-      <slot name="item-slot" :item="item"  />
-    </a>
-   
-  </template>
-  
-  <script setup>
-  import { defineProps,computed } from 'vue';
-
-  const props = defineProps({
-    item: {
-      type: Object,
-      required: true,
-    },
-    active: Boolean, 
-  });
-
-  const itemClass = computed(() => {
-  return props.active
-    ? 'relative px-4 py-3 flex items-center space-x-4 rounded-xl text-white bg-gradient-to-r from-sky-600 to-cyan-400'
-    : 'px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group';
-});
-  </script>
-  
+    <Link
+        class="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out"
+    >
+        <slot />
+    </Link>
+</template>
